@@ -407,8 +407,8 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
 
         try:
             # === Tải ảnh từ Drive để chèn vào email ===
-            image1 = await download_drive_file("1Wwuhxpi6jPmJK1iZhPxNMjWZ9NiZEd-l", "Pricing_Plan.jpg")
-            image2 = await download_drive_file("1CFPLKYGWR3_x1NQ8GdyyrUG7ulFozrxg", "HowToUse.jpg")
+            image1 = await download_drive_file("1rW4oTpiLxgu9Tng1LAqMAFD0FwL4-Rmw", "Pricing_Plan.jpg")
+            image2 = await download_drive_file("1R7yjiry5jZi23kHmn5oe0oOH5UspqEQP", "HowToUse.jpg")
 
             inline_images = [
                 {"cid": "image1", "data": image1["data"], "mime": image1["mime"]},
@@ -432,28 +432,67 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
             # </body>
             # </html>
             # """
+
+
+            # html_body = f"""
+            # <html>
+            # <body style="font-family: Arial, sans-serif;">
+            #     <div>{body}</div>
+
+            #     <div style="margin-top: 20px;">
+            #         <img src="cid:image1" style="width:70%; margin-bottom: 20px;">
+            #     </div>
+
+            #     <div style="display: flex; align-items: center; gap: 20px; margin-top: 10px;">
+            #         <img src="cid:image2" style="width: 60%; max-width: 200px;">
+
+            #         <div style="font-size: 14px; line-height: 1.6;">
+            #             <strong>start@strongbody.ai</strong> | <a href="https://strongbody.ai" target="_blank">https://strongbody.ai</a><br>
+            #             105 CECIL STREET #18 - 20 THE OCTAGON<br>
+            #             SINGAPORE 069534
+            #         </div>
+            #     </div>
+
+            #     <p style="margin-top: 40px; font-size: 14px; color: gray;">
+            #         Tài liệu PDF được đính kèm ở cuối email.
+            #     </p>
+            # </body>
+            # </html>
+            # """
+
+
+
             html_body = f"""
             <html>
             <body style="font-family: Arial, sans-serif;">
+
+                <!-- Phần nội dung ban đầu (giữ nguyên căn trái) -->
                 <div>{body}</div>
 
-                <div style="margin-top: 20px;">
-                    <img src="cid:image1" style="width:70%; margin-bottom: 20px;">
-                </div>
+                <!-- Từ ảnh 1 trở xuống: căn giữa từng phần -->
+                <div style="text-align: center; margin-top: 20px;">
+                    <!-- Ảnh 1 căn giữa -->
+                    <img src="cid:image1" style="width:70%; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;">
 
-                <div style="display: flex; align-items: center; gap: 20px; margin-top: 10px;">
-                    <img src="cid:image2" style="width: 60%; max-width: 200px;">
+                    <!-- Ảnh 2 và chữ nằm ngang và căn giữa toàn khối -->
+                    <div style="display: inline-flex; align-items: flex-start; gap: 20px; margin-top: 10px;">
+                        <img src="cid:image2" style="width: 60%; max-width: 200px;">
 
-                    <div style="font-size: 14px; line-height: 1.6;">
-                        <strong>start@strongbody.ai</strong> | <a href="https://strongbody.ai" target="_blank">https://strongbody.ai</a><br>
-                        105 CECIL STREET #18 - 20 THE OCTAGON<br>
-                        SINGAPORE 069534
+                        <div style="font-size: 14px; line-height: 1.6; text-align: left;">
+                            <!-- Dòng trống để đẩy nội dung xuống dòng thứ 2 -->
+                            <div style="height: 1.5em;"></div>
+
+                            <strong>start@strongbody.ai</strong> | <a href="https://strongbody.ai" target="_blank">https://strongbody.ai</a><br>
+                            105 CECIL STREET #18 - 20 THE OCTAGON<br>
+                            SINGAPORE 069534
+                        </div>
                     </div>
+                    <!-- Ghi chú -->
+                    <p style="margin-top: 40px; font-size: 14px; color: gray;">
+                        Tài liệu PDF được đính kèm ở cuối email.
+                    </p>
                 </div>
 
-                <p style="margin-top: 40px; font-size: 14px; color: gray;">
-                    Tài liệu PDF được đính kèm ở cuối email.
-                </p>
             </body>
             </html>
             """
