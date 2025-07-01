@@ -459,9 +459,9 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
             # </body>
             # </html>
             # """
-            
+
             # Chuyển \n trong nội dung body thành <br> để HTML hiển thị đúng dòng
-            body_html = body.replace("\\n", "<br>") 
+            body_html = body.replace("\n", "<br>") 
 
             html_body = f"""
             <html>
