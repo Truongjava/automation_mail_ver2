@@ -462,12 +462,15 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
 
 
 
+            # Chuyển \n trong nội dung body thành <br> để HTML hiển thị đúng dòng
+            body_html = body.replace("\n", "<br>")
+
             html_body = f"""
             <html>
             <body style="font-family: Arial, sans-serif;">
 
                 <!-- Phần nội dung ban đầu (giữ nguyên căn trái) -->
-                <div>{body}</div>
+                <div>{body_html}</div>
 
                 <!-- Từ ảnh 1 trở xuống: căn giữa từng phần -->
                 <div style="text-align: center; margin-top: 20px;">
@@ -487,6 +490,7 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
                             SINGAPORE 069534
                         </div>
                     </div>
+
                     <!-- Ghi chú -->
                     <p style="margin-top: 40px; font-size: 14px; color: gray;">
                         Tài liệu PDF được đính kèm ở cuối email.
@@ -496,6 +500,7 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
             </body>
             </html>
             """
+
 
 
             # === Tải file PDF từ Drive để đính kèm ===
