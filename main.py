@@ -328,9 +328,10 @@ from fastapi.responses import JSONResponse
 import smtplib
 from email.message import EmailMessage
 import json
-import datetime
 import mimetypes
 import aiohttp
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 app = FastAPI(title="Email API: 1 PDF attach + 2 inline images from Drive")
 
@@ -402,7 +403,7 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
             "body": body,
             "provider": provider,
             "assigned_account_email": SMTP_CONFIGS[provider]["user"],
-            "sent_time": datetime.datetime.now().isoformat(),
+            "sent_time": datetime.now(ZoneInfo("Asia/Ho_Chi_Minh")).isoformat(),
         }
 
         try:
