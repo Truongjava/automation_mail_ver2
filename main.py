@@ -519,7 +519,7 @@ for provider_name, smtp_conf in SMTP_CONFIGS.items():
                 attachments=attachments
             )
 
-            result["status"] = "Sent"
+            result["status"] = "Đã gửi"
             return result
 
         except Exception as e:
