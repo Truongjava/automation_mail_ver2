@@ -118,11 +118,26 @@
     "port": 587,
     "user": "dokhanhxuan15070@gmail.com",
     "pass": "ehxw gqlo ndsa hobg"
+    
   },
   "kevinbrunoo090@gmail.com": {
     "server": "smtp.gmail.com",
     "port": 587,
     "user": "kevinbrunoo090@gmail.com",
     "pass": "wkmq xaug wuwc lnbv"
+  },
+  "dvidsurry@gmail.com": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "dvidsurry@gmail.com",
+    "pass": "hudh slgf ylxa ijht"
+    
+  },
+  "medicalsevices92@gmail.com": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "medicalsevices92@gmail.com",
+    "pass": "ceft mczu fzwv fbtd"
+    
   }
 }
