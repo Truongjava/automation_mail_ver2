@@ -59,6 +59,18 @@
     "user": "tomharry.strongbody.ai@gmail.com",
     "pass": "nfjb doel gsld wfgi"
   },
+  "nguyenhoangjohn123@gmail.com": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "nguyenhoangjohn123@gmail.com",
+    "pass": "dvpq zjge ocgf bdkc"
+  },
+  "phamthaobye123@gmail.com": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "phamthaobye123@gmail.com",
+    "pass": "zppk vmnz aujr ggmk"
+  },
   "start@strongbody.ai": {
     "server": "smtp.gmail.com",
     "port": 587,
