@@ -82,5 +82,23 @@
     "port": 587,
     "user": "anoramikey66@gmail.com",
     "pass": "ljqa ydon dbid rmac"
+  },
+  "joinbodyhehe": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "joinbodyhehe@gmail.com",
+    "pass": "xwiz omsb keoh klzh"
+  },
+  "dokhanhxuan15070": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "dokhanhxuan15070@gmail.com",
+    "pass": "ehxw gqlo ndsa hobg"
+  },
+  "kevinbrunoo090": {
+    "server": "smtp.gmail.com",
+    "port": 587,
+    "user": "kevinbrunoo090@gmail.com",
+    "pass": "wkmq xaug wuwc lnbv"
   }
 }
